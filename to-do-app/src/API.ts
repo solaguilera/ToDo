@@ -46,9 +46,9 @@ export const updateTodo = async (
 export const deleteTodo = async (
   _id: string): Promise<AxiosResponse<ApiDataType>> => {
     try {
-      const deleteTodo: AxiosResponse<ApiDataType> = await axios.delete(`${baseUrl}/delete-todo/${_id}`)
+      const deletedTodo: AxiosResponse<ApiDataType> = await axios.delete(`${baseUrl}/delete-todo/${_id}`)
       return deletedTodo
     } catch (error) {
-      thrown new Error(error) 
+      throw new Error(error) 
     }
   }
