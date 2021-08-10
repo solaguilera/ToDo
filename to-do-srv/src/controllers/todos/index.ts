@@ -16,7 +16,7 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
     const body = req.body as Pick<ITodo, 'name' | 'description' | 'status'>
 
     const todo: ITodo = new Todo({
-      name: body.name,
+      name: JSON.stringify(req.body.name),
       description: body.description,
       status: body.status
     })

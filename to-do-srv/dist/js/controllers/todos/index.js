@@ -28,7 +28,7 @@ const addTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const body = req.body;
         const todo = new todo_1.default({
-            name: body.name,
+            name: JSON.stringify(req.body.name),
             description: body.description,
             status: body.status
         });
